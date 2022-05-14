@@ -15,5 +15,21 @@ def merge_sort(arr):
     back_arr=merge_sort(arr[mid:])
 
     merged_arr=[]
-    while 1:
-        if ahead_arr[]
+    l=h=0
+    while l<len(ahead_arr) and h<len(back_arr):
+        if ahead_arr[l]<back_arr[h]:
+            merged_arr.append(ahead_arr[l])
+            l+=1
+        else :
+            merged_arr.append(back_arr[h])
+            h+=1
+    merged_arr+=ahead_arr[l:]
+    merged_arr+=back_arr[h:]
+
+    return merged_arr
+
+arr=[]
+for _ in range(N):
+    arr.append(int(input()))
+
+print(*merge_sort(arr), sep='\n')
