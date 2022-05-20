@@ -11,3 +11,6 @@ for i in range(3):
 
 X=Counter(square_x)
 Y=Counter(square_y)
+
+print(*list(x for x in X.keys() if X[x]==1),end=' ')
+print(*list(y for y in Y.keys() if Y[y]==1))
