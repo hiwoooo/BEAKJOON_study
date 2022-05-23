@@ -6,7 +6,19 @@
 변의 방향에서 동쪽은 1, 서쪽은 2, 남쪽은 3, 북쪽은 4로 나타낸다.
 '''
 N=int(input())
-farm=[list(map(int, input().split()))for _ in range(N)]
+farm=[list(map(int, input().split()))for _ in range(6)]
+width=[]; height=[]; way=[]
+farm.append(farm[0])
+farm.append(farm[1])
+for i in range(len(farm)):
+    way.append(farm[i][0])
+    if farm[i][0]<=2 :
+        width.append(farm[i][1])
+    else : 
+        height.append(farm[i][1])
 
-for i in range(N):
-    
+for i in range(6):
+    if way[i:i+3]==[3,1,3] or way[i:i+3]==[4,1,4] or way[i:i+3]==[3,2,3] or way[i:i+3]==[4,2,4]:
+        area=farm[i+1][1]*farm[i+2][1]
+
+print((max(width)*max(height)-area)*N)
